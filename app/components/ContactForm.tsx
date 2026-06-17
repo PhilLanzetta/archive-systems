@@ -5,11 +5,9 @@ import styles from "./ContactForm.module.css";
 
 const ORG_TYPES = [
   "Museum",
+  "Cultural Institution",
+  "Collection",
   "Gallery",
-  "Foundation",
-  "Archive",
-  "University / Academic Institution",
-  "Other Cultural Institution",
 ];
 
 type Status = "idle" | "submitting" | "success" | "error";
