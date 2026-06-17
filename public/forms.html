@@ -1,0 +1,38 @@
+<!--
+  This file exists solely so Netlify's form-detection bot can find the form
+  and its fields at deploy time. Netlify Forms scans static HTML in the
+  publish directory during build — it does not execute JavaScript or read
+  React components. Next.js App Router pages aren't written out as static
+  HTML, so the real, interactive form (in app/components/ContactForm.tsx)
+  can't be detected directly. It instead submits to this same form name via
+  fetch(), and Netlify accepts it because the name and fields below match.
+
+  This page is never meant to be visited directly by a person.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Form detection</title>
+  </head>
+  <body>
+    <form name="schedule-call" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="schedule-call" />
+      <input name="bot-field" />
+      <select name="orgType">
+        <option value="Museum">Museum</option>
+        <option value="Gallery">Gallery</option>
+        <option value="Foundation">Foundation</option>
+        <option value="Archive">Archive</option>
+        <option value="University / Academic Institution">
+          University / Academic Institution
+        </option>
+        <option value="Other Cultural Institution">Other Cultural Institution</option>
+      </select>
+      <input type="text" name="orgName" />
+      <input type="email" name="email" />
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+    </form>
+  </body>
+</html>
